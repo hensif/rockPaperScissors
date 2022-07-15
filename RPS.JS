@@ -1,40 +1,67 @@
-const choice = ['ROCK', 'PAPER', 'SCISSORS'];
-
-function computerPlay(array) {
-    return(array[Math.floor(Math.random() * choice.length)])
-}
-
-   computerPlay(choice);
-   let computerSelection = computerPlay(choice);
-function shoot(playerSelection, computerSelection) {
-    if (playerSelection.toUpperCase() == choice[0] && computerSelection == choice[2]) {
-        console.log(`You Win! ${playerSelection.toUpperCase()} beats ${computerSelection}!`)
-    } else if (playerSelection.toUpperCase() == choice[2] && computerSelection == choice[1]) {
-        console.log(`You Win! ${playerSelection.toUpperCase()} beats ${computerSelection}!`)
-    } else if (playerSelection.toUpperCase() == choice[1] && computerSelection == choice[0]) {
-        console.log(`You Win! ${playerSelection.toUpperCase()} beats ${computerSelection}!`)
-    } else if (playerSelection.toUpperCase() == choice[2] && computerSelection == choice[0]) {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection.toUpperCase()}!`)
-    } else if (playerSelection.toUpperCase() == choice[1] && computerSelection == choice[2]) {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection.toUpperCase()}!`)
-    } else if (playerSelection.toUpperCase() == choice[0] && computerSelection == choice[1]) {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection.toUpperCase()}!`)
-    } else if (playerSelection.toUpperCase() == computerSelection) {
-        console.log(`It's a tie! Both players chose ${computerSelection}!`)
+const SELECTIONS = [
+    {
+        name: 'rock',
+        symbol: '✊',
+        beats: 'scissors'
+    },
+    {
+        name: 'paper',
+        symbol: '✋',
+        beats: 'rock'
+    },
+    {
+        name: 'scissors',
+        symbol: '✌',
+        beats: 'paper'
     }
+];
+
+// This function plays 1 round using player and computer selections 
+// as parameters, and outputs the result.
+
+function playRound() {
+
+// This function randomly selects computer choice and assigns 
+// it to SELECTIONS[i]
+
+    function randomSelection() {
+        const randomIndex = Math.floor(Math.random() * SELECTIONS.length)
+        return SELECTIONS[randomIndex];
+    }
+    computerSelection = randomSelection();
+    let selectionName = prompt(`Rock, Paper, Scissors`);
+
+// This function determines player prompt input and assigns it 
+// to SELECTIONS
+
+function playerInput () {
+if (selectionName.toLowerCase() === SELECTIONS[0].name) {
+    return SELECTIONS[0];
+} else if (selectionName.toLowerCase() === SELECTIONS[1].name) {
+    return SELECTIONS[1];
+} else if (selectionName.toLowerCase() === SELECTIONS[2].name) {
+    return SELECTIONS[2];
 }
-// Write a function that plays a single round of Rock Paper Scissors. 
-// The function should take two parameters - the playerSelection and 
-// computerSelection - and then return a string that declares the winner 
-// of the round like so: "You Lose! Paper beats Rock"
-// Make your function’s playerSelection parameter case-insensitive 
-// (so users can input rock, ROCK, RocK or any other variation).
+}
+
+    playerSelection = playerInput();
+if (computerSelection.name === playerSelection.beats) {
+    console.log(`You win! ${playerSelection.name} beats ${computerSelection.name}.`)
+} else if (computerSelection.beats === playerSelection.name) {
+    console.log(`You lose! ${computerSelection.name} beats ${playerSelection.name}.`)
+} else if (computerSelection.name === playerSelection.name)
+    console.log(`It's a tie`);
+}
 
 function game() {
-    for (let i=0; i<5; i++) {
-        prompt('Make your choice! ROCK, PAPER, or SCISSORS?');
-            console.log(shoot(prompt(), computerSelection))
-    }
+for (i=0; i<5; i++) {
+    playRound();
+}
 }
 
-game();
+game()
+
+
+
+// This function will play 5 rounds and declare a winner at first to 3.
+
