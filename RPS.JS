@@ -16,8 +16,11 @@ const SELECTIONS = [
     }
 ];
 
+let playerScore = 0;
+let computerScore = 0;
+
 // This function plays 1 round using player and computer selections 
-// as parameters, and outputs the result.
+// as parameters, and outputs the result, including the score.
 
 function playRound() {
 
@@ -47,21 +50,28 @@ if (selectionName.toLowerCase() === SELECTIONS[0].name) {
     playerSelection = playerInput();
 if (computerSelection.name === playerSelection.beats) {
     console.log(`You win! ${playerSelection.name} beats ${computerSelection.name}.`)
+    ++playerScore;
 } else if (computerSelection.beats === playerSelection.name) {
     console.log(`You lose! ${computerSelection.name} beats ${playerSelection.name}.`)
-} else if (computerSelection.name === playerSelection.name)
-    console.log(`It's a tie`);
-}
+    ++computerScore;
+} else if (computerSelection.name === playerSelection.name) {
+    console.log(`It's a tie`); 
+} else (console.log(`error: invalid entry`));
+    console.log(`Player Score: ${playerScore} --- Computer Score: ${computerScore}`)  
+} 
+
+// This function runs the playRound function 5 times.
 
 function game() {
 for (i=0; i<5; i++) {
     playRound();
 }
-}
+    if (playerScore > computerScore) {
+        console.log(`You win the game!`)
+    } else if (playerScore < computerScore) {
+        console.log(`The computer wins.`)
+    } else console.log(`The game ends in a draw.`);
+    console.log(`Refresh to try again.`)
+} 
 
 game()
-
-
-
-// This function will play 5 rounds and declare a winner at first to 3.
-
