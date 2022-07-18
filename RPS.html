@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script src="RPS.JS"></script>
+    <script src="RPS.JS" defer></script>
     <link href="RPS.css" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
@@ -10,9 +10,16 @@
 </head>
 <body>
     <div class="selections">
-        <button class="selection" data-selection="rock">✊</button>
-        <button class="selection" data-selection="paper">✋</button>
-        <button class="selection" data-selection="scissors">✌</button>
+        <button id="btn" data-selection="rock">✊</button>
+        <button id="btn" data-selection="paper">✋</button>
+        <button id="btn" data-selection="scissors">✌</button>
     </div>
+    <div class="results">
+        <h1 class="results-head"></h1>
+        <div class="scores">
+        <p class="player-score">0</p>
+        <p class="computer-score">0</p>
+        </div>
+</div>
 </body>
 </html>
