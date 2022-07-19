@@ -1,0 +1,74 @@
+html {
+    background-image: url(pexels-aleksandar-pasaric-3048516.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #05d9e8;
+    text-shadow: 5px 5px #ff2a6d;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    
+}
+
+#buttons {
+    font-size: 45px;
+}
+
+button {
+    height: 150px;
+    width: 150px;
+    font-size: 100px;
+    color: #ff2a6d;
+    background-color: #05d9e8;
+    border: 3px solid #d1f7ff;
+    
+}
+
+button:hover {
+    background-color: #ff2a6d;
+    color: #01012b;
+    height: 152px;
+    width: 152px;
+    border: 5px solid #05d9e8;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 200px 0px;
+}
+
+.results {
+align-items: center;
+text-align: center;
+background-color: #01012b;
+color: #01012b;
+text-shadow: 3px -3px #ff2a6d;
+border: 3px solid #d1f7ff;
+margin: 40px;
+width: 466.25px;
+height: 350px;
+}
+
+.results-head {
+}
+
+.scores {
+
+}
+
+.player-scores {
+
+}
+
+.computer-scores {
+
+}
+
+.round-outcomes {
+
+}
+

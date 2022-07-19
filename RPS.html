@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <div class="background-img"></div>
     <script src="RPS.JS" defer></script>
     <link href="RPS.css" rel="stylesheet">
 <head>
@@ -8,19 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body id="bod">
-    <div class="selections">
+<body id="bod" class="container">
+    
+    <div class="selections" id="buttons">
         <button id="btn" data-selection="rock">✊</button>
         <button id="btn" data-selection="paper">✋</button>
         <button id="btn" data-selection="scissors">✌</button>
     </div>
-    <div id="results">
-        <h1 id="results-head"></h1>
-        <div id="scores">
-        <p id="player-score">0</p>
-        <p id="computer-score">0</p>
+    <div id="results" class="results">
+        <h1 id="results-head" class="results-head"></h1>
+        <div id="scores" class="scores">
+        <p id="player-score" class="player-score">Player: 0</p>
+        <p id="computer-score" class="computer-score">Computer: 0</p>
         </div>
-        <p id="round-outcome"></p>
+        <p id="round-outcome" class="round-outcome"></p>
 </div>
 </body>
 </html>
